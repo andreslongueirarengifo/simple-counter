@@ -8,10 +8,10 @@ const Minutes = (props)=>{
         arrayMinutes.unshift("0")
     }
     return(
-        <>
-        <p>{arrayMinutes[0]}</p>
-        <p>{arrayMinutes[1]}</p>
-        </>
+        <div className="d-flex bg-dark text-white">
+            <p className="p-2 m-1 border border-white rounded">{arrayMinutes[0]}</p>
+            <p className="p-2 m-1 border border-white rounded">{arrayMinutes[1]}</p>
+        </div>
     )
 }
 

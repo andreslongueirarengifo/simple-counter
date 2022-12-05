@@ -7,10 +7,10 @@ const Seconds = (props)=>{
         arraySeconds.unshift("0")
     }
     return(
-        <>
-        <p>{arraySeconds[0]}</p>
-        <p>{arraySeconds[1]}</p>
-        </>
+        <div className="d-flex bg-dark text-white">
+            <p className="p-2 m-1 border border-white rounded">{arraySeconds[0]}</p>
+            <p className="p-2 m-1 border border-white rounded">{arraySeconds[1]}</p>
+        </div>
     )
 }
 

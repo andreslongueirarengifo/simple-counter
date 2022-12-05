@@ -38,9 +38,7 @@ const Home = () => {
 	return (
 		<div className="d-flex justify-content-center">
 			<Hours prop={hourCounter}/>
-			<p>:</p>
 			<Minutes prop={minuteCounter}/>
-			<p>:</p>
 			<Seconds prop={secondCounter}/>
 		</div>
 	);
