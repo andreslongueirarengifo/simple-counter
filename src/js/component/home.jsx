@@ -1,24 +1,47 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
+//imports components 
+import Seconds from "./second-component.jsx";
+import Minutes from "./minute-component.jsx";
+import Hours from "./hour-component.jsx";
 
 //create your first component
 const Home = () => {
+
+	const [secondCounter, setCountSeconds] = useState(0);
+	let countSeconds = 0;
+	const [minuteCounter, setCountMinutes] = useState(0);
+	let countMinutes = 0;
+	const [hourCounter, setCountHours] = useState(0);
+
+	useEffect(()=>{
+		const interval = setInterval(()=>{
+			if(countSeconds<59){
+				setCountSeconds(secondCounter => secondCounter+1)
+				countSeconds++;
+			}else if(countMinutes<59){
+				countSeconds=0;
+				setCountSeconds(secondCounter => secondCounter=0)
+			  	setCountMinutes(minuteCounter => minuteCounter+1)
+				countMinutes++;
+			}else{
+				countMinutes=0;
+				setCountMinutes(minuteCounter => minuteCounter=0)
+				setCountHours(hourCounter => hourCounter+1)
+			}
+	   	},1000)
+	   	return () => clearInterval(interval);
+	},[])
+
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="d-flex justify-content-center">
+			<Hours prop={hourCounter}/>
+			<p>:</p>
+			<Minutes prop={minuteCounter}/>
+			<p>:</p>
+			<Seconds prop={secondCounter}/>
 		</div>
 	);
 };
