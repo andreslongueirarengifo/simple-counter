@@ -8,9 +8,9 @@ const Hours = (props)=>{
         arrayHours.unshift("0")
     }
     return(
-        <div className="d-flex bg-dark text-white">
-            <p className="p-2 m-1 border border-white rounded">{arrayHours[0]}</p>
-            <p className="p-2 m-1 border border-white rounded">{arrayHours[1]}</p>
+        <div className="d-flex bg-dark text-white justify-content-center">
+            <p className="p-2 m-1 border border-white rounded h1">{arrayHours[0]}</p>
+            <p className="p-2 m-1 border border-white rounded h1">{arrayHours[1]}</p>
         </div>
     )
 }

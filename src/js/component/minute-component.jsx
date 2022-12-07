@@ -8,9 +8,9 @@ const Minutes = (props)=>{
         arrayMinutes.unshift("0")
     }
     return(
-        <div className="d-flex bg-dark text-white">
-            <p className="p-2 m-1 border border-white rounded">{arrayMinutes[0]}</p>
-            <p className="p-2 m-1 border border-white rounded">{arrayMinutes[1]}</p>
+        <div className="d-flex bg-dark text-white justify-content-center">
+            <p className="p-2 m-1 border border-white rounded h1">{arrayMinutes[0]}</p>
+            <p className="p-2 m-1 border border-white rounded h1">{arrayMinutes[1]}</p>
         </div>
     )
 }
